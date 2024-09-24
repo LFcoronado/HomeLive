@@ -1,0 +1,19 @@
+.nav-menu {
+    background-color: #b8b8b8;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-menu a {
+    color: #1d2551;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+.nav-menu a:hover {
+    background-color:#fff;
+    color: #1d2551;
+}

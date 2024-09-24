@@ -1,0 +1,83 @@
+/* Estilo general para los contenedores */
+.container {
+    background-color: #f4f4f4; /* Color de fondo claro para el contenedor */
+    border-radius: 8px; /* Bordes redondeados para un look moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para un efecto de profundidad */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 50px auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+  }
+  
+  /* Estilo para el título de login y registro */
+  .title {
+    font-size: 24px; /* Tamaño del texto del título */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+  }
+  
+  /* Estilo para los campos de entrada */
+  .input {
+    width: calc(100% - 22px); /* Ajusta el ancho para incluir el padding y border */
+    padding: 10px; /* Espaciado interno para los campos de entrada */
+    margin: 10px 0; /* Espaciado vertical entre los campos */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+  }
+  
+  /* Estilo para los botones de login y registro */
+  .button {
+    background-color: #0056b3; /* Color de fondo azul para el botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano cuando se pasa sobre el botón */
+    font-size: 16px; /* Tamaño del texto del botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    margin-top: 10px; /* Espaciado superior para separar del campo de entrada */
+  }
+  
+  .button:hover {
+    background-color: #004494; /* Color de fondo más oscuro en el hover */
+  }
+  
+  /* Estilo para los enlaces en el formulario de registro y login */
+  .links {
+    margin-top: 15px; /* Espaciado superior para separar del botón */
+    font-size: 14px; /* Tamaño del texto de los enlaces */
+    color: #333; /* Color del texto */
+  }
+  
+  .link {
+    color: #0056b3; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    font-weight: bold; /* Texto en negrita */
+    
+  }
+  
+  .link:hover {
+    color: #054891;
+  }
+  
+  /* Estilo para el enlace "Volver a Inicio" */
+  .home-link {
+    display: flex; /* Utiliza flexbox para centrar el ícono */
+    justify-content: center; /* Centra horizontalmente el ícono */
+    align-items: center; /* Centra verticalmente el ícono */
+    color: #0056b3; /* Color del ícono */
+    text-decoration: none; /* Sin subrayado en el enlace */
+    font-size: 32px; /* Tamaño del ícono */
+    margin: 20px auto; /* Espaciado alrededor del enlace y centra horizontalmente */
+  }
+  
+  .home-link i {
+    margin: 0; /* Sin margen adicional para el ícono */
+    color: #0056b3; /* Color del ícono */
+  }
+  
+  .home-link:hover {
+    color: #003d7a; /* Color del ícono en el hover */
+  }
+  

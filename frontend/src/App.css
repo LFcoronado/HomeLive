@@ -1,0 +1,50 @@
+/* Global Styles */
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.fullscreen-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Usa 100vh para que ocupe toda la altura de la ventana */
+  width: 100%;
+}
+
+.fullscreen-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Espaciado interno */
+}
+
+img {
+  max-width: 100%; /* Imágenes se ajustan al contenedor */
+  height: auto; /* Mantiene la proporción */
+}
+
+h1 {
+  font-size: 2rem; /* Tamaño de fuente por defecto */
+}
+
+@media (max-width: 768px) {
+  .fullscreen-content {
+    flex-direction: column; /* Cambia la dirección en pantallas pequeñas */
+    padding: 10px; /* Ajusta el padding */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Tamaño más pequeño en pantallas pequeñas */
+  }
+}

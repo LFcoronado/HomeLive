@@ -1,0 +1,41 @@
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .search-section form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .search-section input {
+    width: 85%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .search-section button {
+    width: 15%;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .search-section button i {
+    font-size: 18px;
+  }
+  
+  .search-section button:hover {
+    background-color: #444;
+  }
+  

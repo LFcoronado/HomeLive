@@ -1,0 +1,54 @@
+.carousel {
+    text-align: center;
+  }
+  
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .property-card {
+    flex: 0 0 auto; /* Evita que se reduzcan */
+    width: 250px; /* Ancho fijo para las tarjetas */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start; /* Alineación del scroll */
+    background-color: white;
+    transition: transform 0.2s;
+    color: #333;
+  }
+  
+  .property-card:hover {
+    transform: scale(1.05); /* Efecto de hover */
+  }
+  
+  .property-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .carousel-container {
+    display: flex;
+    overflow-x: scroll; /* Cambia a scroll para permitir el desplazamiento */
+    overflow-y: hidden; /* Oculta el desplazamiento vertical */
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Oculta la barra de desplazamiento */
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Para navegadores basados en WebKit como Chrome y Safari */
+}
+
+.carousel-container {
+    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
+    scrollbar-width: none;  /* Para Firefox */
+}
+
+  
