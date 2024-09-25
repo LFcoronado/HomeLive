@@ -5,10 +5,11 @@ import '../styles/Login-Register.css';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName]= useState("")
 
   const handleRegister = () => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password,name)
       .then((userCredential) => {
         // Registro exitoso
         const user = userCredential.user;
@@ -38,6 +39,13 @@ const Register = () => {
         className="input"
         onChange={(e) => setPassword(e.target.value)}
       />
+      <input
+      type='text'
+      placeholder='Nombre'
+      value={name}
+      className='input name'
+      onChange={(e) => setName(e.target.value)}
+      ></input>
       <button className="button" onClick={handleRegister}>Aceptar</button>
     </div>
   );

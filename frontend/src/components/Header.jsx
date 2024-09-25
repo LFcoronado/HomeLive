@@ -47,7 +47,7 @@ function Header() {
       <div className="user-menu">
         {user ? (
           <div onClick={toggleMenu} className="dropdown-trigger">
-            <span className="user-greeting">Hola, {user.displayName || user.email}</span>
+            <span className="user-greeting">Hola, {user.displayName || user.name}</span>
                 <button onClick={handleLogout}>Cerrar sesión</button>
             
           </div>
