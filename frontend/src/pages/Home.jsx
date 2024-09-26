@@ -16,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home; // Asegúrate de que esta línea esté presente
+export default Home; 

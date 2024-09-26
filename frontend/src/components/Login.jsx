@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { auth } from '../firebase'; // Asegúrate de que esta ruta sea correcta
-import { signInWithEmailAndPassword } from 'firebase/auth'; // Importa la función
+import { auth } from '../firebase'; 
+import { signInWithEmailAndPassword } from 'firebase/auth'; 
 import '../styles/Login-Register.css';
 
 const Login = () => {

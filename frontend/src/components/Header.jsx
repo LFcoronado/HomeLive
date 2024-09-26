@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import Login from './Login';  // Importa el componente de Login
-import Register from './Register';  // Importa el componente de Register
+import Login from './Login';  
+import Register from './Register';  
 import '../styles/Header.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Iconos
-import { auth } from '../firebase'; // Asegúrate de que tu configuración de Firebase esté aquí
+import { auth } from '../firebase'; 
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,4 +73,4 @@ function Header() {
   );
 }
 
-export default Header; // Asegúrate de que esta línea esté presente
+export default Header; 

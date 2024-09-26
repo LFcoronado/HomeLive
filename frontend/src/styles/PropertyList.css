@@ -1,54 +1,94 @@
+/* Estilo general para el carrusel */
 .carousel {
-    text-align: center;
-  }
-  
-  .carousel-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .property-card {
-    flex: 0 0 auto; /* Evita que se reduzcan */
-    width: 250px; /* Ancho fijo para las tarjetas */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start; /* Alineación del scroll */
-    background-color: white;
-    transition: transform 0.2s;
-    color: #333;
-  }
-  
-  .property-card:hover {
-    transform: scale(1.05); /* Efecto de hover */
-  }
-  
-  .property-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  .carousel-container {
-    display: flex;
-    overflow-x: scroll; /* Cambia a scroll para permitir el desplazamiento */
-    overflow-y: hidden; /* Oculta el desplazamiento vertical */
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
+  text-align: center;
+}
+h2{
+  color: #333;
 }
 
-/* Oculta la barra de desplazamiento */
+/* Contenedor del carrusel */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
 .carousel-container::-webkit-scrollbar {
-    display: none; /* Para navegadores basados en WebKit como Chrome y Safari */
+  display: none;
 }
 
 .carousel-container {
-    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
-    scrollbar-width: none;  /* Para Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
+/* Estilo para las tarjetas de propiedad */
+.property-card {
+  min-width: 500px;
+  min-height: 500px;
+  margin-right: 16px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  scroll-snap-align: start;
+}
+
+.property-image {
+  max-width: 100%;
+  min-height: 400px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.property-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* ----------------------- */
+/* Responsive para móviles */
+/* ----------------------- */
+
+@media (max-width: 768px) {
+  /* Ajusta el ancho y la altura de las tarjetas en pantallas más pequeñas */
+  .property-card {
+    min-width: 90%; /* Haz que la tarjeta ocupe la mayor parte de la pantalla */
+    min-height: 300px; /* Ajusta la altura mínima de las tarjetas */
+  }
+
+  /* Ajusta el tamaño de la imagen de la propiedad para móviles */
+  .property-image {
+    min-height: 200px; /* Ajusta la altura mínima de la imagen */
+  }
   
+  /* Ajusta los márgenes y el padding del carrusel para que todo se vea más compacto */
+  .carousel-container {
+    padding: 10px; /* Reduce el padding en móviles */
+    gap: 10px; /* Reduce el espacio entre las tarjetas */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Más ajustes para pantallas muy pequeñas */
+  .property-card {
+    min-width: 100%; /* Asegúrate de que las tarjetas ocupen todo el ancho en móviles pequeños */
+    min-height: 350px; /* Ajusta la altura mínima en pantallas muy pequeñas */
+  }
+
+  /* Ajuste adicional para las imágenes en pantallas pequeñas */
+  .property-image {
+    min-height: 300px; /* Reduce aún más la altura mínima de la imagen */
+  }
+
+  /* Ajusta el tamaño del texto en pantallas pequeñas */
+  .property-card {
+    font-size: 0.9rem; /* Reduce ligeramente el tamaño de la fuente */
+  }
+}

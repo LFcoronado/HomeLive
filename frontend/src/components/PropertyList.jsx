@@ -21,21 +21,24 @@ const PropertyList = () => {
     fetchProperties(); // Llama a la función al montar el componente
   }, []); // El efecto se ejecuta solo una vez
 
+  // Filtrar propiedades premium con precio mayor a 5000
+  const premiumProperties = properties.filter(property => property.price >= 50000);
+
   return (
     <div className="carousel">
-      <h2>Lista de Propiedades</h2>
+      <h2>Lista de Propiedades Premium</h2>
       <div className="carousel-container">
-        {properties.length > 0 ? (
-          properties.map((property) => (
+        {premiumProperties.length > 0 ? (
+          premiumProperties.map((property) => (
             <div key={property.id} className="property-card">
+              <div className="property-image">
+                {property.image && <img src={property.image} alt={property.title} className="property-image" />}
+              </div>
               <h3>{property.title}</h3>
-              <p>{property.description}</p>
-              <p>Precio: ${property.price}</p>
-              {property.image && <img src={property.image} alt={property.title} className="property-image" />}
             </div>
           ))
         ) : (
-          <p>No se encontraron propiedades.</p>
+          <p>No se encontraron propiedades premium.</p>
         )}
       </div>
     </div>

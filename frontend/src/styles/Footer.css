@@ -1,8 +1,15 @@
 .footer {
-    background-color:#2e3236;
+    background-color: #2e3236;
     padding: 20px 0;
     color: #fff;
     text-align: center;
+}
+
+/* Sección de redes sociales */
+.social-media {
+    display: flex;
+    justify-content: center; /* Centra los íconos de redes sociales */
+    margin-top: 10px;
 }
 
 .social-media a {
@@ -10,8 +17,21 @@
     margin: 0 10px;
     font-size: 18px;
     text-decoration: none;
+    transition: color 0.3s; /* Transición suave para el cambio de color */
 }
 
 .social-media a:hover {
     text-decoration: underline;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0; /* Relleno reducido en móviles */
+    }
+
+    .social-media a {
+        font-size: 16px; /* Tamaño de fuente reducido en móviles */
+        margin: 0 5px; /* Espaciado ajustado en móviles */
+    }
 }

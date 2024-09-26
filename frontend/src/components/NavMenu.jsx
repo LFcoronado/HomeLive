@@ -1,6 +1,6 @@
 import '../styles/NavMenu.css';
 import { Link } from 'react-router-dom';
-import { auth } from '../firebase'; // Asegúrate de tener tu configuración de Firebase aquí
+import { auth } from '../firebase'; 
 import { useEffect, useState } from 'react';
 
 const NavMenu = () => {

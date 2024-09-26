@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/SearchSection.css'; // Asegúrate de crear este archivo CSS
+import '../styles/SearchSection.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,4 +29,4 @@ const SearchSection = () => {
   );
 };
 
-export default SearchSection; // Asegúrate de que esta línea esté presente
+export default SearchSection; 

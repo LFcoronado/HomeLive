@@ -1,0 +1,69 @@
+[debug] [2024-09-26T02:39:00.973Z] ----------------------------------------------------------------------
+[debug] [2024-09-26T02:39:00.979Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kevin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-26T02:39:00.979Z] CLI Version:   13.19.0
+[debug] [2024-09-26T02:39:00.980Z] Platform:      win32
+[debug] [2024-09-26T02:39:00.980Z] Node Version:  v20.16.0
+[debug] [2024-09-26T02:39:00.980Z] Time:          Wed Sep 25 2024 21:39:00 GMT-0500 (hora estándar de Colombia)
+[debug] [2024-09-26T02:39:00.980Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-26T02:39:01.098Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-26T02:39:01.099Z] > authorizing via signed-in user (kevinfrong129@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\kevin
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-26T02:39:41.511Z] Using project from CLI flag: homelive-3bba0
+[debug] [2024-09-26T02:39:41.514Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/homelive-3bba0 [none]
+[debug] [2024-09-26T02:39:42.077Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/homelive-3bba0 200
+[debug] [2024-09-26T02:39:42.078Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/homelive-3bba0 {"projectId":"homelive-3bba0","projectNumber":"950282064835","displayName":"HomeLive","name":"projects/homelive-3bba0","resources":{"hostingSite":"homelive-3bba0"},"state":"ACTIVE","etag":"1_16a0e86c-da02-45a2-b898-2b63b72467ac"}
+[info] i  Using project homelive-3bba0 (HomeLive) 
+[info] 
+=== Hosting Setup
+[debug] [2024-09-26T02:39:42.089Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/homelive-3bba0 [none]
+[debug] [2024-09-26T02:39:42.372Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/homelive-3bba0 200
+[debug] [2024-09-26T02:39:42.372Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/homelive-3bba0 {"projectId":"homelive-3bba0","projectNumber":"950282064835","displayName":"HomeLive","name":"projects/homelive-3bba0","resources":{"hostingSite":"homelive-3bba0"},"state":"ACTIVE","etag":"1_16a0e86c-da02-45a2-b898-2b63b72467ac"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2024-09-26T02:42:51.753Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2024-09-26T02:42:51.880Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2024-09-26T02:42:51.880Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.13.2","browserURL":"https://www.gstatic.com/firebasejs/10.13.2/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.13.2/firebase.tgz"},"live":{"version":"10.13","browserURL":"https://www.gstatic.com/firebasejs/live/10.13/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.13/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.13.2/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.13.2/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/10.13.2/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/10.13.2/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.13.2/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.13.2/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.13.2/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.13.2/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js","vertexai-preview":"https://www.gstatic.com/firebasejs/10.13.2/firebase-vertexai-preview.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.memory.js"}}
+[info] i  Skipping write of build/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\kevin\OneDrive\Documentos\GitHub\HomeLive 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=373734409&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2024-09-26T02:43:20.305Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-09-26T02:43:20.306Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-09-26T02:43:20.666Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-09-26T02:43:20.666Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2024-09-26T02:43:20.676Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2024-09-26T02:43:21.058Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2024-09-26T02:43:21.058Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"KevBlumm","id":134229520,"node_id":"U_kgDOCAAuEA","avatar_url":"https://avatars.githubusercontent.com/u/134229520?v=4","gravatar_id":"","url":"https://api.github.com/users/KevBlumm","html_url":"https://github.com/KevBlumm","followers_url":"https://api.github.com/users/KevBlumm/followers","following_url":"https://api.github.com/users/KevBlumm/following{/other_user}","gists_url":"https://api.github.com/users/KevBlumm/gists{/gist_id}","starred_url":"https://api.github.com/users/KevBlumm/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/KevBlumm/subscriptions","organizations_url":"https://api.github.com/users/KevBlumm/orgs","repos_url":"https://api.github.com/users/KevBlumm/repos","events_url":"https://api.github.com/users/KevBlumm/events{/privacy}","received_events_url":"https://api.github.com/users/KevBlumm/received_events","type":"User","site_admin":false,"name":"Kevin Londoño","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":1,"public_gists":0,"followers":0,"following":0,"created_at":"2023-05-21T18:50:16Z","updated_at":"2024-09-04T02:29:07Z","private_gists":0,"total_private_repos":1,"owned_private_repos":0,"disk_usage":0,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as KevBlumm 
+[info] 

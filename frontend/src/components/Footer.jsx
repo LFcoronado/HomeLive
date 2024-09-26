@@ -10,5 +10,5 @@ const Footer = () => {
     );
 };
 
-export default Footer; // Asegúrate de que esta línea esté presente
+export default Footer; 
 

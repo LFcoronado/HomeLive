@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../firebase'; // Asegúrate de que esta ruta sea correcta
+import { db } from '../firebase'; 
 import '../styles/AddProperty.css';
+import { Link } from 'react-router-dom';
 
 const AddProperty = () => {
     const [newProperty, setNewProperty] = useState({
@@ -17,11 +18,10 @@ const AddProperty = () => {
     };
 
     const handleAddProperty = async (e) => {
-        e.preventDefault(); // Prevenir el envío del formulario
+        e.preventDefault();
 
         try {
             await addDoc(collection(db, 'properties'), newProperty);
-            // Reinicia el formulario después de agregar
             setNewProperty({ description: "", image: "", price: 0, title: "" });
             alert('Propiedad agregada con éxito');
         } catch (error) {
@@ -31,11 +31,21 @@ const AddProperty = () => {
     };
 
     return (
-        <div className="add-property-container">
-            <div className="add-property-card">
+        <div className="add-property-wrapper">
+            <div className="form-section">
                 <h3>Agregar Nueva Propiedad</h3>
                 <form onSubmit={handleAddProperty}>
                     <div className="form-group">
+                    <div className="form-group">
+                        <label>Imagen (URL):</label>
+                        <input
+                            type="text"
+                            name="image"
+                            value={newProperty.image}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                         <label>Título:</label>
                         <input
                             type="text"
@@ -55,16 +65,6 @@ const AddProperty = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Imagen (URL):</label>
-                        <input
-                            type="text"
-                            name="image"
-                            value={newProperty.image}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
                         <label>Precio:</label>
                         <input
                             type="number"
@@ -74,8 +74,24 @@ const AddProperty = () => {
                             required
                         />
                     </div>
-                    <button type="submit" className="add-property-btn">Agregar Propiedad</button>
                 </form>
+            </div>
+            <Link to="/" className="back-to-home">
+            <i className="fas fa-home"></i> 
+            </Link>
+            <div className="preview-section">
+                <h3>Vista Previa</h3>
+                <div className="preview-card">
+                    {newProperty.image ? (
+                        <img src={newProperty.image} alt="Vista previa de la propiedad" className="property-image" />
+                    ) : (
+                        <div className="image-placeholder">Sin Imagen</div>
+                    )}
+                    <h4>{newProperty.title || "Título de la Propiedad"}</h4>
+                    <p>{newProperty.description || "Descripción"}</p>
+                    <span className="price">{newProperty.price ? `$${newProperty.price}` : "Precio: $0"}</span>
+                </div>
+                <button onClick={handleAddProperty} className="add-property-btn">Agregar Propiedad</button>
             </div>
         </div>
     );

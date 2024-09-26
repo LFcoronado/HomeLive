@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import '../styles/FilteredPropertyList.css';
+import { Link } from 'react-router-dom';
 
 const FilteredPropertyList = () => {
     const [properties, setProperties] = useState([]);
@@ -19,7 +20,7 @@ const FilteredPropertyList = () => {
 
     useEffect(() => {
         applyFilters();
-    }, [properties, titleFilter, priceFilter, query]); // Agregar dependencias para aplicar filtros cuando cambien
+    }, [properties, titleFilter, priceFilter, query]);
 
     const fetchProperties = async () => {
         const db = getFirestore();
@@ -29,7 +30,7 @@ const FilteredPropertyList = () => {
             const fetchedProperties = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setProperties(fetchedProperties);
         } catch (error) {
-            console.error('Error fetching properties:', error);
+            console.error('Error obteniendo propiedades:', error);
         }
     };
 
@@ -61,7 +62,9 @@ const FilteredPropertyList = () => {
 
     return (
         <div className="filtered-properties-container">
-            <h1 className="filtered-properties-title">Propiedades</h1>
+            <Link to="/" className="back-to-home">
+                <i className="fas fa-home"></i> 
+            </Link>
             <div className="filtered-properties-filter-bar">
                 <input
                     type="text"
@@ -78,31 +81,40 @@ const FilteredPropertyList = () => {
                     className="filter-price-input"
                 />
             </div>
-            {filteredProperties.length > 0 ? (
-                <div className="filtered-properties-grid">
-                    {filteredProperties.map(property => (
-                        <div key={property.id} className="filtered-property-card">
-                            <div className="filtered-property-image">
-                                <img src={property.image} alt={property.title} />
+
+            <div className="filtered-properties-carousel">
+                {Array.from({ length: Math.ceil(filteredProperties.length / 6) }, (_, index) => (
+                    <div key={index} className="filtered-properties-carousel-item">
+                        {filteredProperties.slice(index * 6, (index + 1) * 6).map(property => (
+                            <div 
+                                key={property.id} 
+                                className="filtered-property-card" 
+                                onClick={() => openModal(property)}
+                            >
+                                <div className="filtered-property-image">
+                                    <img src={property.image} alt={property.title} />
+                                </div>
+                                <div className="filtered-property-info">
+                                    <h3>{property.title}</h3>
+                                    <p>{property.description}</p>
+                                    <p className="filtered-property-price">Precio: ${property.price}</p>
+                                </div>
                             </div>
-                            <div className="filtered-property-info">
-                                <h3>{property.title}</h3>
-                                <p>{property.description}</p>
-                                <p className="filtered-property-price">Precio: ${property.price}</p>
-                                <button onClick={() => openModal(property)} className="filtered-property-details-btn">Detalles</button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            ) : (
+                        ))}
+                    </div>
+                ))}
+            </div>
+
+            {filteredProperties.length === 0 && (
                 <p className="filtered-properties-no-results">No se encontraron propiedades con esa búsqueda.</p>
             )}
+
             {selectedProperty && (
                 <div className="filtered-properties-modal-overlay">
                     <div className="filtered-properties-modal-content">
-                        <button className="filtered-properties-close-btn" onClick={closeModal}>X</button>
+                        <button className="filtered-properties-close-btn" onClick={closeModal}>Seguir viendo</button>
                         <h2>{selectedProperty.title}</h2>
-                        <img src={selectedProperty.image} alt={selectedProperty.title} />
+                        <img src={selectedProperty.image} alt={selectedProperty.title} className="filtered-property-modal-image" />
                         <p>Precio: ${selectedProperty.price}</p>
                         <p>Ubicación: {selectedProperty.location}</p>
                     </div>

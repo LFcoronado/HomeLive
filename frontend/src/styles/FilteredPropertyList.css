@@ -1,165 +1,195 @@
-/* Estilos generales para el contenedor de propiedades filtradas */
+/* Contenedor de propiedades filtradas */
 .filtered-properties-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
-/* Estilos para el título de propiedades filtradas */
-.filtered-properties-title {
-    font-size: 2em;
+/* Enlace de volver a home */
+.back-to-home {
     margin-bottom: 20px;
-}
-
-/* Estilos para la barra de filtros */
-.filtered-properties-filter-bar {
-    margin-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten en pantallas más pequeñas */
-}
-
-/* Estilos para el input de filtro por título */
-.filter-title-input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 100%; /* Hacer que el input sea del 100% en pantallas pequeñas */
-    max-width: 200px; /* Limitar el ancho máximo en pantallas más grandes */
-}
-
-/* Estilos para el input de filtro por precio máximo */
-.filter-price-input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%; /* Hacer que el input sea del 100% en pantallas pequeñas */
-    max-width: 150px; /* Limitar el ancho máximo en pantallas más grandes */
-}
-
-/* Estilos para el contenedor de tarjetas de propiedades filtradas */
-.filtered-properties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adaptar el número de columnas */
-    gap: 20px;
-}
-
-/* Estilos para cada tarjeta de propiedad filtrada */
-.filtered-property-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 20px; /* Ajuste de fuente para móviles */
+    color: #007BFF;
+    text-decoration: none;
     transition: transform 0.2s;
 }
 
-/* Efecto hover para las tarjetas de propiedad filtradas */
-.filtered-property-card:hover {
-    transform: scale(1.02);
+.back-to-home:hover {
+    transform: scale(1.2);
 }
 
-/* Estilo para la imagen de la propiedad filtrada */
+/* Título de propiedades filtradas */
+.filtered-properties-title {
+    font-size: 1.8em; /* Ajuste de fuente */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filtered-properties-filter-bar {
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    gap: 10px;              /* Espaciado entre los campos de filtro */
+    margin-bottom: 10px;    /* Espacio inferior antes de la lista de propiedades */
+    width: 100%;            /* Asegura que ocupe todo el ancho disponible */
+    max-width: 130px;       /* Ajuste del ancho máximo */
+    margin: 0 auto;         /* Centra el bloque de filtros en la página */
+}
+
+.filter-title-input,
+.filter-price-input {
+    width: 100%;            /* Asegura que los inputs ocupen todo el ancho de su contenedor */
+    padding: 4px;           /* Espaciado interno */
+    border: 1px solid #ccc; /* Establece el borde */
+    border-radius: 4px;     /* Bordes redondeados */
+    font-size: 13px;        /* Tamaño de fuente */
+}
+
+/* Carrusel de propiedades */
+.filtered-properties-carousel {
+    display: flex;
+    flex-direction: column; /* Cada carrusel verticalmente */
+    width: 100%;
+}
+
+.filtered-properties-carousel-item {
+    display: flex;
+    overflow-x: auto; /* Desplazamiento horizontal para las tarjetas */
+    margin-bottom: 15px; /* Espaciado entre carruseles */
+    scroll-behavior: smooth; /* Suaviza el desplazamiento */
+}
+
+.filtered-properties-carousel-item::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento */
+}
+
+.filtered-property-card {
+    min-width: 280px; /* Ajuste de tamaño para tarjetas */
+    margin-right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
 .filtered-property-image {
     width: 100%;
-    height: 200px; /* Tamaño fijo para la zona de la foto */
+    height: 250px; /* Ajuste de altura para móviles */
     overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .filtered-property-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene la imagen centrada y recortada si es necesario */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
-/* Estilo para la información de la propiedad filtrada */
 .filtered-property-info {
-    padding: 15px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Estilo para el precio de la propiedad filtrada */
-.filtered-property-price {
-    font-weight: bold;
-    color: #007bff;
+.filtered-property-info h3 {
+    font-size: 1.1em;
+    margin: 0;
 }
 
-/* Estilo para el botón de detalles en propiedades filtradas */
-.filtered-property-details-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+.filtered-property-info p {
+    margin: 4px 0;
 }
 
-.filtered-property-details-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para el modal de detalles filtrados */
 .filtered-properties-modal-overlay {
-    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
+    z-index: 1000;
 }
 
 .filtered-properties-modal-content {
     background: white;
-    padding: 20px;
     border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    position: relative;
+    padding: 15px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
     color: #333;
 }
 
-/* Estilo para la imagen dentro del modal de propiedades filtradas */
-.filtered-properties-modal-content img {
+.filtered-property-modal-image {
     width: 100%;
-    height: auto;
+    height: 250px;
     border-radius: 8px;
-    margin-bottom: 15px;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-/* Estilo para el botón de cerrar del modal de propiedades filtradas */
 .filtered-properties-close-btn {
-    background: #e74c3c;
-    color: white;
+    background: #333;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    font-size: 22px;
     cursor: pointer;
-    font-size: 1em;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    float: right;
+    color: white;
+    transition: background 0.3s, color 0.3s;
 }
 
 .filtered-properties-close-btn:hover {
-    background: #c0392b;
+    background: #555;
+    color: #fff;
 }
 
-/* Estilo para el mensaje de no resultados encontrados */
-.filtered-properties-no-results {
-    font-size: 1.2em;
-    color: #888;
-    text-align: center;
+.filtered-property-modal-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Media Queries para adaptabilidad */
+.filtered-property-modal-info h2 {
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+.filtered-property-modal-info p {
+    margin: 8px 0;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .filtered-properties-title {
-        font-size: 1.5em;
+        font-size: 1.4em; /* Ajuste de tamaño de fuente para móviles */
     }
 
-    .filtered-properties-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Menos columnas en pantallas más pequeñas */
+    .filter-title-input,
+    .filter-price-input {
+        font-size: 12px;
+    }
+
+    .filtered-property-card {
+        min-width: 240px; /* Tamaño de tarjeta más pequeño para móviles */
+    }
+
+    .filtered-properties-modal-content {
+        padding: 10px;
+    }
+
+    .filtered-properties-close-btn {
+        font-size: 18px;
     }
 }
