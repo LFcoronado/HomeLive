@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { auth } from '../firebase'; // Asegúrate de que esta ruta sea correcta
+import { auth } from '../firebase'; 
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Importa la función
 import '../styles/Login-Register.css';
 
@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        console.log('Login successful', userCredential.user);
+        alert('Sesión iniciada correctamente', userCredential.user);
       })
       .catch(error => {
         console.error('Login failed', error);

@@ -23,7 +23,7 @@ const Register = () => {
           console.error('Error al actualizar el perfil:', error);
         });
 
-        console.log('Registro exitoso:', user);
+        alert('Registro exitoso:', user);
       })
       .catch((error) => {
         const errorCode = error.code;
