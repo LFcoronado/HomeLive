@@ -8,7 +8,8 @@ const AddProperty = () => {
         description: "",
         image: "",
         price: 0,
-        title: ""
+        title: "",
+        telefono: ""
     });
 
     const handleChange = (e) => {
@@ -22,7 +23,7 @@ const AddProperty = () => {
         try {
             await addDoc(collection(db, 'properties'), newProperty);
             // Reinicia el formulario después de agregar
-            setNewProperty({ description: "", image: "", price: 0, title: "" });
+            setNewProperty({ description: "", image: "", price: 0, title: "" , telefono: ""});
             alert('Propiedad agregada con éxito');
         } catch (error) {
             console.error("Error al agregar propiedad: ", error);
@@ -74,6 +75,17 @@ const AddProperty = () => {
                             required
                         />
                     </div>
+                    <div className="form-group">
+                        <label>Telefono:</label>
+                        <input
+                            type="text"
+                            name="telefono"
+                            value={newProperty.telefono}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
                     <button type="submit" className="add-property-btn">Agregar Propiedad</button>
                 </form>
             </div>

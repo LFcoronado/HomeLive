@@ -1,7 +1,9 @@
 .carousel {
     text-align: center;
   }
-  
+  h2{
+    color: #fffdfd;
+  }
   .carousel-container {
     display: flex;
     overflow-x: auto;

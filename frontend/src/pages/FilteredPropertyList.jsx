@@ -88,6 +88,7 @@ const FilteredPropertyList = () => {
                             <div className="filtered-property-info">
                                 <h3>{property.title}</h3>
                                 <p>{property.description}</p>
+                                <p>Teléfono:{property.telefono}</p>
                                 <p className="filtered-property-price">Precio: ${property.price}</p>
                                 <button onClick={() => openModal(property)} className="filtered-property-details-btn">Detalles</button>
                             </div>
@@ -105,6 +106,7 @@ const FilteredPropertyList = () => {
                         <img src={selectedProperty.image} alt={selectedProperty.title} />
                         <p>Precio: ${selectedProperty.price}</p>
                         <p>Ubicación: {selectedProperty.location}</p>
+                        <p>Teléfono:{selectedProperty.telefono}</p>
                     </div>
                 </div>
             )}

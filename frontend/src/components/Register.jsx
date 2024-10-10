@@ -6,6 +6,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [telefono, setTelefono] = useState('');
 
   const handleRegister = () => {
     const auth = getAuth();
@@ -56,6 +57,15 @@ const Register = () => {
         className='input'
         onChange={(e) => setName(e.target.value)}
       />
+      <input
+        type='text'
+        placeholder='Telefono'
+        value={telefono}
+        className='input'
+        onChange={(e) => setTelefono(e.target.value)}
+      />
+
+
       <button className="button" onClick={handleRegister}>Aceptar</button>
     </div>
   );
